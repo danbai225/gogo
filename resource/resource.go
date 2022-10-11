@@ -21,3 +21,6 @@ var ToolExe2 []byte
 
 //go:embed config
 var Config []byte
+
+//go:embed config-neps
+var ConfigNESP []byte

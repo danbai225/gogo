@@ -22,9 +22,10 @@ type Conf struct {
 }
 
 var confing *Conf
-var mod, dllMod string
+var mod, dllMod, homeDir string
 
 func main() {
+	clean()
 	//配置相关
 	_, err := os.Stat("conf.json")
 	if err != nil {
@@ -57,7 +58,7 @@ func main() {
 		fmt.Println("请选择")
 		return
 	}
-	homeDir, _ := os.UserHomeDir()
+	homeDir, _ = os.UserHomeDir()
 	switch mod {
 	case "5EArena":
 		//防止5e检测 删除驱动
@@ -102,9 +103,6 @@ func main() {
 	}
 	rules := tinder_rules.NewRules("GOGO防止扫盘", psArr, RArr)
 	_ = os.WriteFile("火绒规则文件.json", rules, os.ModePerm)
-	//配置写出
-	_ = os.MkdirAll(fmt.Sprintf("%s%s", homeDir, `\Documents\Osiris`), os.ModePerm)
-	_ = os.WriteFile(fmt.Sprintf("%s%s", homeDir, `\Documents\Osiris\config`), resource.Config, os.ModePerm)
 	game()
 }
 
@@ -168,8 +166,14 @@ func game() {
 			_ = os.WriteFile("danbai.dll", resource.GOESPDll, os.ModePerm)
 		case "多功能":
 			_ = os.WriteFile("danbai.dll", resource.OsirisDll, os.ModePerm)
+			//配置写出
+			_ = os.MkdirAll(fmt.Sprintf("%s%s", homeDir, `\Documents\Osiris`), os.ModePerm)
+			_ = os.WriteFile(fmt.Sprintf("%s%s", homeDir, `\Documents\Osiris\config`), resource.Config, os.ModePerm)
 		case "多功能增强":
 			_ = os.WriteFile("danbai.dll", resource.NEPSDll, os.ModePerm)
+			//配置写出
+			_ = os.MkdirAll(fmt.Sprintf("%s%s", homeDir, `\Documents\NEPS`), os.ModePerm)
+			_ = os.WriteFile(fmt.Sprintf("%s%s", homeDir, `\Documents\NEPS\config`), resource.ConfigNESP, os.ModePerm)
 		}
 
 		fmt.Println("pid:", p.Pid, "开始注入")
@@ -184,9 +188,7 @@ func game() {
 			fmt.Println(csgo.Inject2(p.Pid, fmt.Sprintf("%s%s", GetCurPath(), `\danbai.dll`)))
 		}
 		fmt.Println("注入完成")
-		_ = os.Remove("danbai.dll")
-		_ = os.Remove("danbai.exe")
-		_ = os.Remove("danbai2.exe")
+		clean()
 		processes, err = process.Processes()
 		for p != nil {
 			flag := false
@@ -205,4 +207,9 @@ func game() {
 		}
 		fmt.Println("检测到游戏结束,等待下一次注入")
 	}
+}
+func clean() {
+	_ = os.Remove("danbai.dll")
+	_ = os.Remove("danbai.exe")
+	_ = os.Remove("danbai2.exe")
 }
