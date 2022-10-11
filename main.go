@@ -188,6 +188,7 @@ func game() {
 			fmt.Println(csgo.Inject2(p.Pid, fmt.Sprintf("%s%s", GetCurPath(), `\danbai.dll`)))
 		}
 		fmt.Println("注入完成")
+		time.Sleep(time.Second)
 		clean()
 		processes, err = process.Processes()
 		for p != nil {
