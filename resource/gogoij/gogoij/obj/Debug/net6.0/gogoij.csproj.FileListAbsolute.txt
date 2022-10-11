@@ -1,0 +1,15 @@
+C:\Users\danbai\source\repos\gogoij\gogoij\bin\Debug\net6.0\gogoij.exe
+C:\Users\danbai\source\repos\gogoij\gogoij\bin\Debug\net6.0\gogoij.deps.json
+C:\Users\danbai\source\repos\gogoij\gogoij\bin\Debug\net6.0\gogoij.runtimeconfig.json
+C:\Users\danbai\source\repos\gogoij\gogoij\bin\Debug\net6.0\gogoij.dll
+C:\Users\danbai\source\repos\gogoij\gogoij\bin\Debug\net6.0\gogoij.pdb
+C:\Users\danbai\source\repos\gogoij\gogoij\obj\Debug\net6.0\gogoij.csproj.AssemblyReference.cache
+C:\Users\danbai\source\repos\gogoij\gogoij\obj\Debug\net6.0\gogoij.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danbai\source\repos\gogoij\gogoij\obj\Debug\net6.0\gogoij.AssemblyInfoInputs.cache
+C:\Users\danbai\source\repos\gogoij\gogoij\obj\Debug\net6.0\gogoij.AssemblyInfo.cs
+C:\Users\danbai\source\repos\gogoij\gogoij\obj\Debug\net6.0\gogoij.csproj.CoreCompileInputs.cache
+C:\Users\danbai\source\repos\gogoij\gogoij\obj\Debug\net6.0\gogoij.dll
+C:\Users\danbai\source\repos\gogoij\gogoij\obj\Debug\net6.0\refint\gogoij.dll
+C:\Users\danbai\source\repos\gogoij\gogoij\obj\Debug\net6.0\gogoij.pdb
+C:\Users\danbai\source\repos\gogoij\gogoij\obj\Debug\net6.0\gogoij.genruntimeconfig.cache
+C:\Users\danbai\source\repos\gogoij\gogoij\obj\Debug\net6.0\ref\gogoij.dll
